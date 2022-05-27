@@ -33,5 +33,49 @@ ul{
 
 }
 .hero{
-    
+    background-image: url(../img/marco2.jpg);
+    height: 551px;
+}
+.encabezado{
+    margin: 30px 0; /*30 arriba y 0 a la derecha*/
+    color: white;    
+}
+.submenu{
+    position: relative;
+}
+.submenu #carrito{
+    display: none;/*El valor display: none le dice al navegador que no lo represente; el resultado es que el elemento queda escondido y el espacio que debería ocupar colapsado.*/
+
+}
+.submenu:hover #carrito{/*Lo que hace de la propiedad hover una propiedad superutil es su facilidad para hacer cualquier función con tan solo pasar por encima del elemento al que se le aplica la propiedad.*/
+    display: block;
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 1;
+    background: #17181b;
+    padding: 20px;
+}
+.vacio{
+    padding: 10px;
+    background-color: #fbaf32;
+    text-align: center;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+}
+.button{
+    background-color: #fbaf32;
+    color: rgb(255, 255, 255);
+}
+.contenido-icono{
+    margin-top: 80px;
+    color: white;    
+}
+.contenido-icon form{
+    position: relative;
+    margin-bottom: 0;
+}
+.contenido-icono form .submit-buscador{
+
 }
