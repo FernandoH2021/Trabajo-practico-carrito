@@ -76,6 +76,38 @@ ul{
     position: relative;
     margin-bottom: 0;
 }
+.contenido-icon form #buscador{
+    height: 50px;
+    margin-bottom: 0;    
+}
 .contenido-icono form .submit-buscador{
-
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    padding: 0;
+    display: block;
+    text-indent: -9999px;/*establece la tabulacion de la primera linea de texto*/
+    width: 50px;
+    background-image: url(../img/lupa.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    border: none;
+}
+.barra{
+    padding: 20px 0;
+    background: #fbaf32;
+    background: -webkit-linear-gradient(left, #b95a00, 0%, #ad5400, 100%);
+}
+.barra p{
+    margin: 0;
+    color: white;    
+}
+.icono{
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 60px;
+    background-size: 30px;
+    margin-bottom: 40px;
+    text-align: center;
 }
