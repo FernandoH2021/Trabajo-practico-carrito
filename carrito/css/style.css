@@ -38,7 +38,7 @@ ul{
     height: 551px;
 }
 .encabezado{
-    margin: 30px 0; /*30 arriba y 0 a la derecha*/
+    margin: 4px 0; /*30 arriba y 0 a la derecha*/
     color: white;    
 }
 .submenu{
@@ -55,18 +55,18 @@ ul{
     right: 0;
     top: 100%;
     z-index: 1;
-    background: #17181b;
+    background: rgb;
     padding: 20px;
 }
 .vacio{
     padding: 10px;
-    background-color: #fbaf32;
+    background-color: #3944e0;
     text-align: center;
     border-radius: 10px;
     color: rgb(255, 255, 255);
 }
 .button{
-    background-color: #fbaf32;
+    background-color: #3944e0;
     color: rgb(255, 255, 255);
 }
 .contenido-icono{
