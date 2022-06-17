@@ -90,7 +90,7 @@ ul{
     display: block;
     text-indent: -9999px;/*establece la tabulacion de la primera linea de texto*/
     width: 50px;
-    background-image: url(../img/lupa.png);
+    background-image: url(..img/lupa.png);
     background-position: right center;
     background-repeat: no-repeat;
     border: none;
