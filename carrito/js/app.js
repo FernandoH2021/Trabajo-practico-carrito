@@ -34,6 +34,40 @@ function leerDatosLista(lista) {
     imagen: lista.querySelector("img").src,
     titulo: lista.querySelector("h4").textContent,
     precio: lista.querySelector(".precio span").textContent,
-    id: lista.querySelector("a").getAttribute(data - id),
+    id: lista.querySelector("a").getAttribute("data - id"),
   };
+
+  //funcion insertar carrito
+
+  insertarCarrito(infoCarrito);
+}
+function insertarCarrito(lista) {
+  const row = document.createElement("tr");
+
+  row.innerHTML = `
+<td>
+<img src="${lista.imagen}" width=100>
+</td>
+
+<td>${lista.titulo}</td>
+<td>${lista.precio}</td>
+<td>
+<a href="#" class="borrar-lista" data-id = "${lista}">X</a>
+</td>
+`;
+
+  listaAccesorios.appendChild(row); //Por medio de appendChild podemos incluir en un nodo un nuevo hijo, de esta manera.
+
+  guardarListaLocalStorage(lista);
+}
+
+function eliminarLista(e) {
+  e.preventDefault();
+
+  let lista, listaId;
+
+  if (e.target.classList.contains("borrar-lista")) {
+    e.target.parentElement.parentElement.remove();
+    lista = e.target.parentElement.parentElement;
+  }
 }
