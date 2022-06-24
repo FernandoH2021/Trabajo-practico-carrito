@@ -69,5 +69,52 @@ function eliminarLista(e) {
   if (e.target.classList.contains("borrar-lista")) {
     e.target.parentElement.parentElement.remove();
     lista = e.target.parentElement.parentElement;
+    listaId = lista.querySelector("a").getAttribute(data-id);    
   }
+  eliminarListaLocalStorage(listaId);
+
+}
+
+//funcion vaciar carrito
+
+function vaciarCarrito(){
+  while(listaAccesorios.firstChild){
+    listaAccesorios.removeChild(listaAccesorios.firstChild);    
+  }
+  vaciarLocalStorage();
+  return false;
+
+}
+function guardarListaLocalStorage(lista){
+let lista;
+lista = obtenerListaLocalStorage();
+lista.push(lista);
+
+localStorage.setItem("lista", JSON.stringify(lista));
+
+}
+
+function obtenerListaLocalStorage(){
+  let listaLS;
+if(localStorage.getItem(lista) === null){ //=== estricta igualdad
+  listaLS = [];
+  
+}
+else{
+  listaLS = JSON.parse(localStorage.getItem("lista"));
+}
+return listaLS;
+
+}
+function leerLocalStorage(){
+  let listaLS;
+  listaLS = obtenerListaLocalStorage();
+  listaLS.forEach(function(lista){
+    const row = document.createElement("tr");
+    row.innerHTML = `
+
+
+    `;
+
+  });
 }
