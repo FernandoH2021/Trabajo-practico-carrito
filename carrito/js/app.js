@@ -69,52 +69,68 @@ function eliminarLista(e) {
   if (e.target.classList.contains("borrar-lista")) {
     e.target.parentElement.parentElement.remove();
     lista = e.target.parentElement.parentElement;
-    listaId = lista.querySelector("a").getAttribute(data-id);    
+    listaId = lista.querySelector("a").getAttribute(data - id);
   }
   eliminarListaLocalStorage(listaId);
-
 }
 
 //funcion vaciar carrito
 
-function vaciarCarrito(){
-  while(listaAccesorios.firstChild){
-    listaAccesorios.removeChild(listaAccesorios.firstChild);    
+function vaciarCarrito() {
+  while (listaAccesorios.firstChild) {
+    listaAccesorios.removeChild(listaAccesorios.firstChild);
   }
   vaciarLocalStorage();
   return false;
-
 }
-function guardarListaLocalStorage(lista){
-let lista;
-lista = obtenerListaLocalStorage();
-lista.push(lista);
+function guardarListaLocalStorage(lista) {
+  let lista;
+  lista = obtenerListaLocalStorage();
+  lista.push(lista);
 
-localStorage.setItem("lista", JSON.stringify(lista));
-
+  localStorage.setItem("lista", JSON.stringify(lista));
 }
 
-function obtenerListaLocalStorage(){
+function obtenerListaLocalStorage() {
   let listaLS;
-if(localStorage.getItem(lista) === null){ //=== estricta igualdad
-  listaLS = [];
-  
+  if (localStorage.getItem(lista) === null) {
+    //=== estricta igualdad
+    listaLS = [];
+  } else {
+    listaLS = JSON.parse(localStorage.getItem("lista"));
+  }
+  return listaLS;
 }
-else{
-  listaLS = JSON.parse(localStorage.getItem("lista"));
-}
-return listaLS;
-
-}
-function leerLocalStorage(){
+function leerLocalStorage() {
   let listaLS;
   listaLS = obtenerListaLocalStorage();
-  listaLS.forEach(function(lista){
+  listaLS.forEach(function (lista) {
     const row = document.createElement("tr");
     row.innerHTML = `
+      <td>
+          <img src = "${lista.imagen}" width = 100>
+      </td>
 
+        <td>${lista.titulo}</td>
 
+        <td>${lista.precio}</td>
+
+        <td>
+            <a href = "#" class = "borrar-lista" data-id = "${lista.id}">X</a>
+
+        </td>
     `;
+    listaAccesorios.appendChild(row);    
+  });
+}
 
+function eliminarListaLocalStorage(lista){
+  let listaLS;
+  listaLS = obtenerListaLocalStorage();
+
+  listaLS.forEach(function(listaLS, index){
+    if(listaLS.id  === lista){
+      listaLS.splice(index, 1);
+    }
   });
 }
