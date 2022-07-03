@@ -120,17 +120,21 @@ function leerLocalStorage() {
 
         </td>
     `;
-    listaAccesorios.appendChild(row);    
+    listaAccesorios.appendChild(row);
   });
 }
 
-function eliminarListaLocalStorage(lista){
+function eliminarListaLocalStorage(lista) {
   let listaLS;
   listaLS = obtenerListaLocalStorage();
 
-  listaLS.forEach(function(listaLS, index){
-    if(listaLS.id  === lista){
+  listaLS.forEach(function (listaLS, index) {
+    if (listaLS.id === lista) {
       listaLS.splice(index, 1);
     }
   });
+  localStorage.setItem("lista", JASON.stringify(listaLS));
+}
+function vaciarLocalStorage() {
+  localStorage.clear();
 }
